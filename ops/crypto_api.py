@@ -9,6 +9,7 @@ from logger import dagster_logger
 load_dotenv()
 CRYPTO_ENDPOINT = os.getenv("CRYPTO_ENDPOINT")
 
+
 # Define the op to get crypto data.
 @op(
     name="get_crypto_data",
@@ -23,7 +24,7 @@ CRYPTO_ENDPOINT = os.getenv("CRYPTO_ENDPOINT")
 def get_crypto_data() -> dict:
     """Fetch data on cryptocurrencies."""
     dagster_logger.info("INFO: Collecting data from cryptocompare.com")
-    
+
     params = {
         "market": "cadli",
         "instruments": "BTC-USD",
@@ -31,7 +32,9 @@ def get_crypto_data() -> dict:
 
     try:
         # Call the API to get data.
-        get_crypto_response = requests.get(url=CRYPTO_ENDPOINT+"/index/cc/v1/latest/tick", params=params)
+        get_crypto_response = requests.get(
+            url=CRYPTO_ENDPOINT + "/index/cc/v1/latest/tick", params=params
+        )
         raw_data = get_crypto_response.json()
 
         # Log the data.
@@ -40,7 +43,7 @@ def get_crypto_data() -> dict:
 
         # Return the BTC-USD data.
         return raw_data
-    
+
     # If error in API call, raise exception
     except Exception as e:
         raise e

@@ -4,6 +4,7 @@ from datetime import datetime
 from dagster import op, RetryPolicy, Backoff, In, Out
 from logger import dagster_logger
 
+
 @op(
     name="process_data",
     description="Process data from cryptocompare.com API.",
@@ -17,7 +18,7 @@ from logger import dagster_logger
 )
 def process_data(raw_data: dict) -> pd.DataFrame:
     """Process data from cryptocompare.com API."""
-    
+
     # Check if data is None.
     if raw_data is None:
         dagster_logger.error("ERROR: No data received from cryptocompare.com.")
@@ -52,4 +53,3 @@ def process_data(raw_data: dict) -> pd.DataFrame:
     dagster_logger.info(f"{df}")
 
     return df
-
