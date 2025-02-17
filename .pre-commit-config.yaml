@@ -1,9 +1,13 @@
 repos:
 -   repo: https://github.com/psf/black
     rev: 25.1.0
-    hooks:  
+    hooks:
     - id: black
       language_version: python3.10
+-   repo: https://github.com/asottile/reorder_python_imports
+    rev: v1.7.0
+    hooks:
+    -   id: reorder-python-imports
 -   repo: https://github.com/pre-commit/pre-commit-hooks
     rev: v1.2.3
     hooks:
@@ -11,6 +15,8 @@ repos:
       args: ["--max-line-length=100"]
     - id: no-commit-to-branch
       args: ['--branch', main]
+    - id: end-of-file-fixer
+    - id: trailing-whitespace
 -   repo: https://github.com/Yelp/detect-secrets
     rev: v1.5.0
     hooks:

@@ -1,7 +1,13 @@
 # Process API Data Ops
-import pandas as pd
 from datetime import datetime
-from dagster import op, RetryPolicy, Backoff, In, Out
+
+import pandas as pd
+from dagster import Backoff
+from dagster import In
+from dagster import op
+from dagster import Out
+from dagster import RetryPolicy
+
 from logger import dagster_logger
 
 

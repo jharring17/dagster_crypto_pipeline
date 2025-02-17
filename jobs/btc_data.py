@@ -1,4 +1,5 @@
 from dagster import job
+
 from ops.crypto_api import get_crypto_data
 from ops.process_data import process_data
 
