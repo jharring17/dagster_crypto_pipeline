@@ -1,51 +1,83 @@
 # Dagster Crypto Notification Pipeline
-This project aims to provide insights on cryptocurrency using [Dagster](https://docs.dagster.io/) orchestration to collect and transform data from APIs. Notifications about data insights can then be sent via messaging service to the user.
+
+This project provides insights on cryptocurrency using [Dagster](https://docs.dagster.io/) for orchestration. It collects and transforms data from APIs, then sends notifications with key insights via a messaging service.
+
+## Table of Contents
+
+- [API(s) Utilized](#apis-utilized)
+- [Getting Started](#getting-started)
+  - [Clone the Repo](#clone-the-repo)
+  - [Create a Virtual Environment](#create-a-virtual-environment)
+  - [Create a .env File](#create-a-env-file)
+  - [Run Dagster UI](#run-dagster-ui)
+
+---
 
 ## API(s) Utilized
 
-- [Crypto Compare](https://cryptocompare.com) - data source for information on cryptocurrencies (i.e., price, volume, percentage change)
-> Note: This is a free API up to 11,000 calls per month.
+- **[Crypto Compare](https://cryptocompare.com)** – Provides data on cryptocurrencies (e.g., price, volume, percentage change).
+  > **Note:** This API is free up to **11,000 calls per month**.
+
+---
 
 ## Getting Started
 Follow these instructions to experiment with the project yourself.
 ### Clone the Repo
 Copy the repo locally.
 
-```git clone https://github.com/jharring17/dagster_crypto_pipeline.git <folder_path>```
+```bash
+git clone https://github.com/jharring17/dagster_crypto_pipeline.git <folder_path>
+```
 
-### Create a Virtual Env
+### Create a Virtual Environment
 Enter the folder when the project was cloned.
 
-```cd <path_to_project_folder>```
+```bash
+cd <path_to_project_folder>
+```
 
 Create a virtual env to manage dependencies.
 
-```python -m venv <virtual_env_name>```
+```bash
+python -m venv <virtual_env_name>
+```
 
 Activate the virtual env.
 
-```source <virtual_env_name>/bin/activate```
+```bash
+source <virtual_env_name>/bin/activate # For Mac/Linux
+```
 
 Install the dependencies listed within the repo.
 
-```pip install -r requirements.txt```
+```bash
+pip install -r requirements.txt
+```
 
 To check all packages successfully installed, list them.
 
-```pip list```
+```bash
+pip list
+```
 
 ### Create a .env File
 In the project root directory, create a .env file.
 
-```touch .env```
+```bash
+touch .env
+```
 
 Enter the API credentials within the file.
 
-```VAR_NAME="value"```
+```
+VAR_NAME="value"
+```
 
-### To Run Dagster UI
+### Run Dagster UI
 Execute the following command within the project.
 
-```dagster dev```
+```bash
+dagster dev
+```
 
 The UI will now be accessible at [localhost](localhost:3000).
