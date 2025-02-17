@@ -1,4 +1,4 @@
-### Process API Data Ops ###
+# Process API Data Ops
 import pandas as pd
 from datetime import datetime
 from dagster import op, RetryPolicy, Backoff, In, Out
@@ -21,11 +21,11 @@ def process_data(raw_data: dict) -> pd.DataFrame:
 
     # Check if data is None.
     if raw_data is None:
-        dagster_logger.error("ERROR: No data received from cryptocompare.com.")
+        dagster_logger.error("ERROR: No data received.")
 
     # Check if data is empty.
     if not raw_data:
-        dagster_logger.error("ERROR: Empty data received from cryptocompare.com.")
+        dagster_logger.error("ERROR: Empty data received.")
 
     # Extract data from the dictionary.
     raw_data = raw_data["Data"]["BTC-USD"]

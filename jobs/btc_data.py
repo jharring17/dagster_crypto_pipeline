@@ -7,4 +7,4 @@ from ops.process_data import process_data
 def btc_data():
     # Setup the op interactions.
     raw_data = get_crypto_data()
-    processed_data = process_data(raw_data=raw_data)
+    process_data(raw_data=raw_data)

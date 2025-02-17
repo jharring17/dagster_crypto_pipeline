@@ -1,4 +1,4 @@
-### Crypto API Ops ###
+# Crypto API Ops
 import os
 import requests
 from dotenv import load_dotenv
