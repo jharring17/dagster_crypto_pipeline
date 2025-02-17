@@ -176,3 +176,6 @@ cython_debug/
 
 # Dagster
 tmp*/
+
+# detect-secrets
+.secrets.baseline
