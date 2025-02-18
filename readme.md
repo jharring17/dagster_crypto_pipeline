@@ -21,6 +21,8 @@ This project provides insights on cryptocurrency using [Dagster](https://docs.da
 - **[Crypto Compare](https://cryptocompare.com)** – Provides data on cryptocurrencies (e.g., price, volume, percentage change).
   > **Note:** This API is free up to **11,000 calls per month**.
 
+- Discord Bot API - Provides messaging ability to specified Discord server.
+
 ---
 
 ## Getting Started

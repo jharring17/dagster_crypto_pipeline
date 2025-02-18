@@ -5,7 +5,7 @@ from dotenv import load_dotenv
 from dagster import op, RetryPolicy, Backoff, Out
 from logger import dagster_logger
 
-# Get the api endpoint and credentials.
+# Get the API endpoint and credentials.
 load_dotenv()
 CRYPTO_ENDPOINT = os.getenv("CRYPTO_ENDPOINT")
 
