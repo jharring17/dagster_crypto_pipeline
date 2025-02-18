@@ -8,7 +8,7 @@ from logger import dagster_logger
 
 # Get the API endpoint and credentials.
 load_dotenv()
-BOT_NAME = os.getenv("BOT_NAME")
+DISCORD_BOT_NAME = os.getenv("BOT_NAME")
 DISCORD_BOT_TOKEN = os.getenv("DISCORD_BOT_TOKEN")
 DISCORD_CHANNEL_ID = os.getenv("DISCORD_CHANNEL_ID")
 
@@ -28,6 +28,9 @@ DISCORD_CHANNEL_ID = os.getenv("DISCORD_CHANNEL_ID")
 def send_discord_message(message: pd.DataFrame) -> bool:
     """Sends a message to a specific Discord channel using a bot."""
     try:
+        # Logging the Discord bot sending message.
+        dagster_logger.info(f"INFO: {DISCORD_BOT_NAME} sent message to Discord.")
+
         # Construct the URL and headers.
         url = f"https://discord.com/api/v10/channels/{DISCORD_CHANNEL_ID}/messages"
         headers = {
