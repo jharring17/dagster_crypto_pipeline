@@ -31,13 +31,16 @@ def send_discord_message(message: pd.DataFrame) -> bool:
         # Logging the Discord bot sending message.
         dagster_logger.info(f"INFO: {DISCORD_BOT_NAME} sent message to Discord.")
 
+        # Convert the dataframe into markdown.
+        message = f"```{message.to_markdown(index=False)}```"
+
         # Construct the URL and headers.
         url = f"https://discord.com/api/v10/channels/{DISCORD_CHANNEL_ID}/messages"
         headers = {
             "Authorization": f"Bot {DISCORD_BOT_TOKEN}",
             "Content-Type": "application/json",
         }
-        data = {"content": str(message)}
+        data = {"content": message}
 
         # Post the message.
         response = requests.post(url, json=data, headers=headers)
