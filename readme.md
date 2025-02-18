@@ -2,7 +2,7 @@
 
 This project provides insights on cryptocurrency using [Dagster](https://docs.dagster.io/) for orchestration. It collects and transforms data from APIs, then sends notifications with key insights via a messaging service.
 
-![Mermaid flowchart diagram depicting general project structure](https://github.com/jharring17/dagster_crypto_pipeline/tree/main/assets/flowchart.png "Dagster Flowchart")
+![Mermaid flowchart diagram depicting general project structure](assets/flowchart.png "Dagster Flowchart")
 
 ## Table of Contents
 
@@ -20,6 +20,8 @@ This project provides insights on cryptocurrency using [Dagster](https://docs.da
 
 - **[Crypto Compare](https://cryptocompare.com)** – Provides data on cryptocurrencies (e.g., price, volume, percentage change).
   > **Note:** This API is free up to **11,000 calls per month**.
+
+- Discord Bot API - Provides messaging ability to specified Discord server.
 
 ---
 
