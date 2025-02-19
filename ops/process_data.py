@@ -13,7 +13,7 @@ from logger import dagster_logger
 
 @op(
     name="process_data",
-    description="Process data from cryptocompare.com API.",
+    description="Process data from CryptoCompare.com API.",
     ins={"raw_data": In(dict)},
     out=Out(pd.DataFrame),
     retry_policy=RetryPolicy(
@@ -23,7 +23,7 @@ from logger import dagster_logger
     ),
 )
 def process_data(raw_data: dict) -> pd.DataFrame:
-    """Process data from cryptocompare.com API."""
+    """Process data from CryptoCompare.com API."""
 
     # Check if data is None.
     if raw_data is None:

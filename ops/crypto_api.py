@@ -18,7 +18,7 @@ CRYPTO_ENDPOINT = os.getenv("CRYPTO_ENDPOINT")
 # Define the op to get crypto data.
 @op(
     name="get_crypto_data",
-    description="Gets crypto data from cryptocompare.com using API.",
+    description="Gets crypto data from CryptoCompare.com using API.",
     out=Out(dict),
     retry_policy=RetryPolicy(
         max_retries=3,
