@@ -9,6 +9,7 @@ from dagster import RetryPolicy
 from dotenv import load_dotenv
 
 from logger import dagster_logger
+from ops.op_config import CryptoConfig
 
 # Get the API endpoint and credentials.
 load_dotenv()
@@ -26,13 +27,21 @@ CRYPTO_ENDPOINT = os.getenv("CRYPTO_ENDPOINT")
         backoff=Backoff.EXPONENTIAL,
     ),
 )
-def get_crypto_data() -> dict:
+def get_crypto_data(context, config: CryptoConfig) -> dict:
     """Fetch data on cryptocurrencies."""
-    dagster_logger.info("INFO: Collecting data from cryptocompare.com")
+    dagster_logger.info("INFO: Collecting data from CryptoCompare.com")
 
+    # Pull the crypto from the config.
+    crypto_config = context.op_config["crypto"]
+    crypto_instrument = context.op_config["instrument"]
+
+    # Log the crypto_config.
+    dagster_logger.info(f"INFO: Test pull from config - {crypto_config}.")
+
+    # Set the parameters for the API call.
     params = {
-        "market": "cadli",
-        "instruments": "BTC-USD",
+        "market": crypto_instrument,
+        "instruments": crypto_config,
     }
 
     try:
