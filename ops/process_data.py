@@ -25,6 +25,9 @@ from logger import dagster_logger
 def process_data(raw_data: dict) -> pd.DataFrame:
     """Process data from CryptoCompare.com API."""
 
+    # Extract the crypto key dynamically from config.
+    crypto_key = raw_data.get("crypto", None)
+
     # Check if data is None.
     if raw_data is None:
         dagster_logger.error("ERROR: No data received.")
@@ -34,7 +37,7 @@ def process_data(raw_data: dict) -> pd.DataFrame:
         dagster_logger.error("ERROR: Empty data received.")
 
     # Extract data from the dictionary.
-    raw_data = raw_data["Data"]["BTC-USD"]
+    raw_data = raw_data["Data"]["Data"][crypto_key]
 
     # Extract values from the data dictionary.
     currency = raw_data.get("INSTRUMENT", None)

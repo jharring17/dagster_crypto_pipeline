@@ -56,7 +56,10 @@ def get_crypto_data(context, config: CryptoConfig) -> dict:
         dagster_logger.info(f"INFO: return type of API data {type(raw_data)}.")
 
         # Return the BTC-USD data.
-        return raw_data
+        return {
+            "crypto": crypto_config,
+            "Data": raw_data,
+        }
 
     # If error in API call, raise exception
     except Exception as e:

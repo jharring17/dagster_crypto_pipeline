@@ -3,7 +3,7 @@ repos:
     rev: 25.1.0
     hooks:
     - id: black
-      language_version: python3.10
+      language_version: python3.13
 -   repo: https://github.com/asottile/reorder_python_imports
     rev: v1.7.0
     hooks:
